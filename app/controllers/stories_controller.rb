@@ -13,6 +13,7 @@ class StoriesController < ApplicationController
 
   def create
     story = Story.new(story_params)
+
     story.save
     render json: story
   end
