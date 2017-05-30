@@ -13,16 +13,17 @@ class StoriesController < ApplicationController
 
   def create
     story = Story.new(story_params)
-
     story.save
     render json: story
   end
 
   def update
+
     story = Story.find(params[:id])
     story.update(story_params)
     story.save
-    render json: story
+    stories = Story.all
+    render json: stories
 
   end
 
